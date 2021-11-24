@@ -1,0 +1,147 @@
+:root {
+    /*variaveis utilizadas no projeto*/
+    /*modo escuro*/
+    --cor-fundo-calculadora-escuro: #1f201d;
+    --cor-fundo-visor-escuro: #353840;
+    --cor-fundo-numero-escuro: #272b2e;
+    --cor-numero-escuro: #ffffff;
+    --cor-fundo-operador-escuro: #5bb3ee;
+    --cor-fundo-acoes-escuro: #d4e7fe;
+    /*modo claro*/
+    --cor-fundo-calculadora-claro: #fffdfe;
+    --cor-fundo-visor-claro: #e9f1fc;
+    --cor-fundo-numero-claro: #f4f8fb;
+    --cor-fundo-operador-claro: #c0e8fb;
+    --cor-fundo-acoes-claro: #d1e4fb;
+    
+    --cor-fundo-site: #74ebd5;
+}
+
+* {
+    /*resetar conf padrão*/
+    margin: 0; /*sem margem*/
+    padding: 0; /*sem espaço entre texto*/
+    border: 0;
+    background: none;
+    box-sizing: border-box; 
+
+}
+html {
+    font-size: 10px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif; /*fontes "reservas" para se a principal não funcionar*/
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: var(--cor-fundo-site); /*puxa valor da variavel*/
+}
+
+.calculadora {
+    box-shadow: 0 0 25px 0 rgba(0,0,0,0.3); /*sombra com transparencia*/
+    border-radius: 2em;/*borda arredondada*/
+    overflow: hidden; /* nao estourar o tamanho*/
+    background-color: var(--cor-fundo-calculadora-escuro);
+}
+
+/*posicionamento botoes*/
+.zero {
+    grid-area: zero;
+}
+.um {
+    grid-area: um;
+}
+.dois {
+    grid-area: dois;
+}
+.tres {
+    grid-area: tres;
+}
+.quatro {
+    grid-area: quatro;
+}
+.cinco {
+    grid-area: cinco;
+}
+.seis {
+    grid-area: seis;
+}
+.sete {
+    grid-area: sete;
+}
+.oito {
+    grid-area: oito;
+}
+.nove {
+    grid-area: nove;
+}
+.decimal {
+    grid-area: decimal;
+}
+.duplo-zero {
+    grid-area: duplo-zero;
+}
+.somar {
+    grid-area: somar;
+}
+.dividir {
+    grid-area: dividir;
+}
+.multiplicar {
+    grid-area: multiplicar;
+}
+.salvar {
+    grid-area: salvar;
+}
+.recuperar {
+    grid-area: recuperar;
+}
+.limpar {
+    grid-area: limpar;
+}
+.igual {
+    grid-area: igual;
+}
+
+.teclas > button { /*selecionando todos os botoes dentro de teclas*/
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer; /*cursor mãozinha*/
+}
+.teclas{
+    padding: 3rem;
+    display: grid;
+    grid-gap: 1.5rem; /*espaçamento botoes*/
+    grid-template-columns: repeat(4, 6rem); /*define coluna (qt, tamanho)*/
+    grid-template-rows: repeat(5, 6rem); /*define linhas */
+    grid-template-areas: 
+        "somar subtrair multiplicar dividir"
+        "sete oito nove salvar"
+        "quatro cinco seis recuperar"
+        "um dois tres limpar"
+        "zero decimal duplo-zero igual";
+
+}
+
+.visor {
+    background-color: var(--cor-fundo-visor-escuro);
+    color: var(--cor-numero-escuro); /*cor texto*/
+    width: 34.5rem;
+    padding: 3rem;
+    text-align: right;
+    font-size: 5rem;
+    border-radius: 0 0 2rem 2rem;
+}
+
+.operador {
+    background-color: var(--cor-fundo-operador-escuro);
+}
+.numero {
+    background-color: var(--cor-fundo-numero-escuro);
+    color: var(--cor-numero-escuro);
+}
+.acao {
+    background-color: var(--cor-fundo-acoes-escuro);
+}
