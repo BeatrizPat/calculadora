@@ -83,25 +83,25 @@ body {
 .duplo-zero {
     grid-area: duplo-zero;
 }
-.somar {
+[data-tecla="somar"] {
     grid-area: somar;
 }
-.dividir {
+[data-tecla="dividir"] {
     grid-area: dividir;
 }
-.multiplicar {
+[data-tecla="multiplicar"] {
     grid-area: multiplicar;
 }
-.salvar {
+[data-tecla="salvar"] {
     grid-area: salvar;
 }
-.recuperar {
+[data-tecla= "recuperar"] {
     grid-area: recuperar;
 }
-.limpar {
+[data-tecla= "limpar"] {
     grid-area: limpar;
 }
-.igual {
+[data-tecla= "igual"]{
     grid-area: igual;
 }
 
@@ -135,10 +135,10 @@ body {
     border-radius: 0 0 2rem 2rem;
 }
 
-.operador {
+[data-tipo-tecla="operador"] {
     background-color: var(--cor-fundo-operador-escuro);
 }
-.numero {
+[data-tipo-tecla="numero"] {
     background-color: var(--cor-fundo-numero-escuro);
     color: var(--cor-numero-escuro);
 }
